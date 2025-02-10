@@ -1,5 +1,14 @@
-name: PluginDemo
-main: com.briangershon.demo.App
-description: Plugin Demo
+name: noLobbyChat
+main: link.kmaba.noLobbyChat.App
+description: No chatting in lobbies!
 version: ${project.version}
 api-version: 1.20
+commands:
+  nlc:
+    description: Change the no-chat message
+    usage: /nlc <message>
+    permission: nolobbychat.admin
+permissions:
+  nolobbychat.admin:
+    description: Allows changing the no-chat message
+    default: op
