@@ -7,13 +7,17 @@ A simple Spigot/Paper plugin that prevents players from chatting in lobby server
 - Blocks chat messages from regular players
 - Allows staff members with permission to chat normally
 - Configurable response message with color code support
-- Simple command to change the message in-game
+- Optional silent mode to completely disable notification messages
+- Simple commands to change the message and toggle silent mode
 
 ## Commands
 
-- `/nlc` - Shows the current no-chat message
+- `/nlc` - Shows the current no-chat message and silent mode status
 - `/nlc <message>` - Changes the no-chat message
   - Example: `/nlc &c&lSorry! &7Chat is disabled in the lobby`
+- `/nlc silent <true/false>` - Toggles silent mode
+  - Example: `/nlc silent true` (disables all notification messages)
+  - Example: `/nlc silent false` (enables notification messages)
 
 ## Permissions
 
@@ -26,9 +30,11 @@ A simple Spigot/Paper plugin that prevents players from chatting in lobby server
 ```yaml
 # config.yml
 message: "&c&lYou cannot chat in lobby, join a server to chat."
+silent-mode: false
 ```
 
-The plugin supports color codes using the `&` symbol.
+- `message`: The message sent to players when chat is disabled (supports color codes using `&`)
+- `silent-mode`: When set to `true`, completely disables notification messages - chat will simply not work without any message being sent to the player
 
 ## Installation
 
